@@ -1,0 +1,19 @@
+apiVersion: app/v1
+kind: Deployment
+metadata: 
+  name: client-deployments 
+spec:
+  replicas: 3
+  selector:
+    matchLables: 
+      component: web
+  template:
+    metadata:
+      lables:
+        component: web
+    spec:
+      containers:
+        - name: client
+          image: 
+          ports:
+            - containerPort: 3000
